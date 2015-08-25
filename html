@@ -1,0 +1,119 @@
+echo # slider >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:DenisMalofeyev/slider.git
+git push -u origin master
+<div class="container">
+<ul class="cb-slideshow">
+ <li><span>Image 01</span><div><strong>Первый в Минске контактный зоопарк открылся 22 августа в торгово-развлекательном центре “Титан” во время проходящего здесь “Фестиваля всезнайки”</strong>.</div></li>
+ <li><span>Image 02</span><div></div></li>
+ <li><span>Image 03</span><div><strong>В нем представлены десятки видов зверей и птиц, в том числе пони, камерунская коза и олененок. В качестве фирменного животного выбраны еноты — носухи и полоскуны.</strong></div></li>
+ <li><span>Image 04</span><div><strong>В зверинце работает аниматор, есть зона детского творчества. Для детей организуют мастер-классы, в том числе учат плести браслеты, изготавливать поделки и рисовать зверей</strong>.</div></li>
+ <li><span>Image 05</span><div><strong>Источник</strong></div></li>
+ <li><span>Image 06</span><div><strong>БелаПАН.</strong> </div></li>
+ </ul>
+</div>
+<style>
+.container
+{
+    position:relative;
+    margin: 100px auto;
+    padding: 5px;
+    width: 600px;
+    height:360px;
+    background-color: silver;
+    border: 5px solid grey;
+    border-radius:15px;
+}
+.cb-slideshow li span {
+ width: 100%;
+ height: 100%;
+ position: absolute;
+ top: 0px;
+ left: 0px;
+ color: transparent;
+ background-size: cover;
+ background-position: 50% 50%;
+ background-repeat: none;
+ opacity: 0;
+ z-index: 0;
+ animation: imageAnimation 36s linear infinite 0s;
+}
+.cb-slideshow li div {
+ z-index: 1000;
+ position: absolute;
+ bottom: 30px;
+ left: 0px;
+ width: 100%;
+ text-align: center;
+ opacity: 0;
+ color: #fff;
+ animation: titleAnimation 36s linear infinite 0s;
+}
+.cb-slideshow li div h3 {
+ font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+ font-size: 240px;
+ padding: 0;
+ line-height: 200px;
+}
+.cb-slideshow li:nth-child(1) span {
+ background-image: url(http://belapan.com/webroot/delivery/files/media/photogalleries/2015/08/02/kontzoo/02_kontzoo.jpg?type=2927305)
+}
+.cb-slideshow li:nth-child(2) span {
+ background-image: urlhttp://belapan.com/webroot/delivery/files/media/photogalleries/2015/08/02/kontzoo/03_kontzoo.jpg?type=2927305);
+ animation-delay: 6s;
+}
+.cb-slideshow li:nth-child(3) span {
+ background-image: url(http://belapan.com/webroot/delivery/files/media/photogalleries/2015/08/02/kontzoo/04_kontzoo.jpg?type=2927305);
+ animation-delay: 12s;
+}
+.cb-slideshow li:nth-child(4) span {
+ background-image: url(http://belapan.com/webroot/delivery/files/media/photogalleries/2015/08/02/kontzoo/05_kontzoo.jpg?type=2927305);
+ animation-delay: 18s;
+}
+.cb-slideshow li:nth-child(5) span {
+ background-image: url(http://belapan.com/webroot/delivery/files/media/photogalleries/2015/08/02/kontzoo/06_kontzoo.jpg?type=2927305);
+ animation-delay: 24s;
+}
+.cb-slideshow li:nth-child(6) span {
+ background-image: url(http://belapan.com/webroot/delivery/files/media/photogalleries/2015/08/02/kontzoo/07_kontzoo.jpg?type=2927305);
+ animation-delay: 30s;
+}
+
+.cb-slideshow li:nth-child(2) div {
+ animation-delay: 6s;
+}
+.cb-slideshow li:nth-child(3) div {
+ animation-delay: 12s;
+}
+.cb-slideshow li:nth-child(4) div {
+ animation-delay: 18s;
+}
+.cb-slideshow li:nth-child(5) div {
+ animation-delay: 24s;
+}
+.cb-slideshow li:nth-child(6) div {
+ animation-delay: 30s;
+}
+@keyframes imageAnimation {
+ 0% { opacity: 0; animation-timing-function: ease-in; }
+ 8% { opacity: 1; animation-timing-function: ease-out; }
+ 17% { opacity: 1 }
+ 25% { opacity: 0 }
+ 100% { opacity: 0 }
+}
+@keyframes titleAnimation {
+ 0% { opacity: 0 }
+ 8% { opacity: 1 }
+ 17% { opacity: 1 }
+ 19% { opacity: 0 }
+ 100% { opacity: 0 }
+}
+@media screen and (max-width: 1140px) {
+ .cb-slideshow li div h3 { font-size: 140px }
+}
+@media screen and (max-width: 600px) {
+ .cb-slideshow li div h3 { font-size: 280px }
+}
+</style>
